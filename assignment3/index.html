@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chanel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="ch.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<style>
+    .container {
+        padding: 20px;
+        color: rgb(8, 8, 8);
+    }
+    @media only screen and (max-width: 600px) {
+        .container {background: #caa1e6;}
+    }
+    @media only screen and (min-width: 600px) {
+        .container {background: #f2f0f0;}
+    }
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ddd;
+        background-color: #f8f8f8;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tab button {
+        background-color: #f8f8f8;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        transition: 0.3s;
+        font-size: 16px;
+        margin: 0 10px;
+        color: #000;
+    }
+
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-top: none;
+    }
+
+    .chanel-theme {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #333;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .chanel-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .chanel-description {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Chanel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">Home</a>
+                        <a class="dropdown-item" href="about.html">About<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="look&order.html">Look&Order<span class="sr-only">(current)</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="Contact.html">Contact</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container my-4">
+    <h1>Welcome to Chanel</h1>
+    <p>Discover the world of elegance and fashion.</p>
+
+
+    <img src="https://i.pinimg.com/originals/a6/4b/5c/a64b5c5b7e8e96c83d19b7424b96a474.jpg" alt="Chanel Fashion" class="img-fluid rounded">
+
+    <p>Enter the world of CHANEL and discover the latest in Fashion & Accessories, Eyewear, Fragrance, Skincare & Makeup, Fine Jewellery & Watches</p>
+
+    <a href="#" class="btn btn-primary">Learn More</a>
+</div>
+
+<section>
+    <div class="container">
+        <button onclick="showAlert()">Show Alert</button>
+    </div>
+</section>
+<script>
+    // Show a simple alert when the button is clicked
+    function showAlert() {
+        alert("Beware, you may be overwhelmed by the Chanel fashion world!");
+    }
+
+    // Notification
+    function showNotification() {
+        // Let's check if the browser supports notifications
+        if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+        }
+
+        // Let's check whether notification permissions have already been granted
+        else if (Notification.permission === "granted") {
+            // If it's okay let's create a notification
+            var notification = new Notification("Beware, you may be overwhelmed by the Chanel fashion world!");
+        }
+
+        // Otherwise, we need to ask the user for permission
+        else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(function (permission) {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                    var notification = new Notification("Beware, you may be overwhelmed by the Chanel fashion world!");
+                }
+            });
+        }
+    }
+</script>
+
+
+<div class="chanel-theme">
+    <div class="chanel-title">Chanel Interactive Tabs</div>
+    <div class="chanel-description">Explore the world of Chanel through our interactive tabs.</div>
+</div>
+
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Makeup')">Makeup</button>
+    <button class="tablinks" onclick="openTab(event, 'Perfume')">Perfume</button>
+    <button class="tablinks" onclick="openTab(event, 'Fashion')">Fashion</button>
+</div>
+
+<div id="Makeup" class="tabcontent">
+    <h3>Chanel Makeup</h3>
+    <img src="https://squper.com/uploads/attachment/1K/pq/z2WL16g2cwWTe6rNAjJPBXyjrUGMJCri.jpg" alt="Chanel Makeup" style="width:300px;height:200px;">
+    <p>Discover the latest makeup products from Chanel.</p>
+</div>
+
+<div id="Perfume" class="tabcontent">
+    <h3>Chanel Perfume</h3>
+    <img src="https://www.jigsawplanet.com/whoomymammy/old-fashioned-perfume-bottles?rc=face" alt="Chanel Perfume" style="width:300px;height:200px;">
+    <p>Experience the enchanting world of Chanel perfumes.</p>
+</div>
+
+<div id="Fashion" class="tabcontent">
+    <h3>Chanel Fashion</h3>
+    <img src="https://i2.wp.com/styleblog.ca/wp-content/uploads/2019/10/chanel-spring-summer-2020_rooftops3.jpg?fit=1200%2C800&ssl=1" alt="Chanel Fashion" style="width:300px;height:200px;">
+    <p>Immerse yourself in the timeless elegance of Chanel fashion.</p>
+</div>
+
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
